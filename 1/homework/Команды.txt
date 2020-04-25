@@ -1,0 +1,33 @@
+Создайте базу данных example:
+
+ mysql> create database example;
+
+
+
+
+разместите в ней таблицу users, состоящую из двух столбцов, числового id и строкового name: 
+
+mysql> create table users(id int, name VARCHAR);
+ 
+ 
+ 
+ 
+ 
+Создайте дамп базы данных example из предыдущего задания: 
+
+$ mysqldump example > /c/users/Lera/Desktop/example.sql
+
+ 
+ 
+ 
+разверните содержимое дампа в новую базу данных sample:
+
+mysql> create database sample;
+$ mysql sample < /c/users/Lera/Desktop/example.sql
+
+
+
+
+Создайте дамп единственной таблицы help_keyword базы данных mysql. Причем добейтесь того, чтобы дамп содержал только первые 100 строк таблицы:
+
+$ mysqldump --where="true limit 100" mysql help_keyword > /c/users/Lera/Desktop/help_keyword.sql
